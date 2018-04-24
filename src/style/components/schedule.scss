@@ -1,5 +1,32 @@
 .slot__title {
     font-size: 24px;
     padding: 4px;
+    font-family: lato;
+    font-size: 16px;
 }
 
+.schedule__slots {
+    margin-top: 65px;
+}
+
+.slot__course {
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(255,255,255,0.6);
+
+}
+
+.slot__empty {
+    opacity: 0.75;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-style: dashed;
+    color: white;
+}
+
+.slot {
+    margin: 20px auto;
+    height: 55px;
+    width: 280px;
+    bow-shadow: 0 2px 14px 0 rgba(0,0,0, 0.2);
+}
