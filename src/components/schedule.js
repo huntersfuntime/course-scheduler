@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { removeCourse } from '../actions'
 
 class Schedule extends Component {
 
@@ -11,9 +12,9 @@ class Schedule extends Component {
 
     renderCourse(course) {
         return (
-            <div key={this.props.courses.indexOf(course)} className="slot">
-                <div className="slot__title">{course.title}</div>
-                <a className="action slot__remove">remove course</a>
+            <div key={this.props.courses.indexOf(course)} className={`slot ${course.enrolled ? 'slot__course' : 'slot__empty'}`}>
+                <div className="slot__title">{course.enrolled ? course.title : 'Empty Slot'}</div>
+                <a className={`action slot__remove ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}>remove course</a>
             </div>
         )
     }
@@ -37,4 +38,13 @@ function mapStateToProps(state) {
     return { courses: state.courses };
 }
 
-export default connect(mapStateToProps)(Schedule);
+function mapDispatchToProps(dispatch) {
+    return {
+        removeCourse:(course)=> {
+            dispatch(removeCourse(course))
+        }
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Schedule);

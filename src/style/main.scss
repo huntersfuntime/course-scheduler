@@ -63,3 +63,24 @@ ul li {
     line-height: 22px;
 }
 
+.slot__course {
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+.slot__empty {
+    opacity: 0.75;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-style: dashed;
+    color: white;
+}
+
+.show-content {
+    display: block;
+}
+
+.hide-content {
+    display: none;
+}
