@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect, dispatch } from 'react-redux';
-import { fetchCourses, addCourse, removeCourse } from '../actions'
+import { fetchCourses, addCourse, removeCourse, toggleDescription } from '../actions'
 
 class CourseLibrary extends Component {
 
@@ -22,11 +22,11 @@ class CourseLibrary extends Component {
                 <div className="course__title-container">
                     <div className="course__title">{course.title}</div>
                 </div>
-                <a>arrow</a>
+                <a onClick={() => this.props.toggleDescription(course)}>arrow</a>
                 <a className={`action ${course.enrolled ? 'hide-content' : 'show-content'}`} onClick={() => this.props.addCourse(course)}>add</a>
-                 <a className={`action ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}>remove</a>
+                <a className={`action ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}>remove</a>
             </div>
-            <div className="course__description">
+            <div className={`course__description ${course.open ? 'show-content' : 'hide-content'} `}>
                 <h6 className="course__description-title">Course Description</h6>
                 <p>{course.description}</p>
             </div>
@@ -62,6 +62,9 @@ function mapDispatchToProps(dispatch) {
         },
         removeCourse:(course) => {
             dispatch(removeCourse(course))
+        },
+        toggleDescription:(course) => {
+            dispatch(toggleDescription(course))
         }
     }
 }
