@@ -10,3 +10,15 @@
     align-items: center;
     width: 100%;
 }
+
+.course__arrow {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #487BCE;
+    transition: all .3s ease;
+   
+}
+
+.course__arrow-close {
+    transform: rotate(180deg);
+}
