@@ -22,3 +22,25 @@
 .course__arrow-close {
     transform: rotate(180deg);
 }
+
+.course__title-container {
+    width: 85%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.course__selected {
+    background-color: white;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,.21);
+}
+
+.course {
+    min-height: 60px;
+    transform: all .4s ease;
+}
+
+
+
+
+
