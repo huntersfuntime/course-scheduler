@@ -1,7 +1,15 @@
+.action {
+    transition: all .3s ease;
+}
+
+
 .course:hover {
     background-color: white;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,.21);
     transition: all .4s ease;
+    .action {
+        opacity: 1;
+    }
 }
 
 .course__info {
